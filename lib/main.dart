@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'bloc/reels_state_bloc_events/bytes_block.dart';
-import 'bloc/videoplayer_state_bloc_events.dart/video_player_bloc.dart';
 import 'data/repositories/bytes_repository.dart';
 import 'di/injection_container.dart';
 import 'views/reels_page.dart';
@@ -27,9 +26,6 @@ class MyApp extends StatelessWidget {
           BlocProvider(
             create: (context) =>
                 BytesBloc(repository: getIt<BytesRepository>()),
-          ),
-          BlocProvider(
-            create: (context) => VideoPlayerBloc(),
           ),
         ],
         child: const ReelsScreen(),
